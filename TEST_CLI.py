@@ -5,7 +5,13 @@ Usage:
   TEST_CLI.py filtr_by [<filter_category>] [<object>]
   TEST_CLI.py --add [<name>]
   TEST_CLI.py --highscores
-  TEST_CLI.py --compare [<arg1>] [<arg2>]
+  TEST_CLI.py compare_imdb [<arg1>] [<arg2>]
+  TEST_CLI.py compare_rating [<arg1>] [<arg2>]
+  TEST_CLI.py compare_awards [<arg1>] [<arg2>]
+  TEST_CLI.py compare_runtime [<arg1>] [<arg2>]
+  'compare_rating'
+  
+  
 '''
 
 from docopt import docopt
@@ -59,15 +65,26 @@ if args['--highscores']:
     if os.sys.platform.startswith('linux') : os.system('clear')
     elif os.sys.platform.startswith('win32') : os.system('cls')
     TestFunctions.TestFunctions.highscores()
-if args['compare']:
-    if os.sys.platform.startswith('linux') : os.system('clear')
-    elif os.sys.platform.startswith('win32') : os.system('cls')
-    TestFunctions.TestFunctions.highscores(
+
+
+if args['compare_imdb']:
     if os.sys.platform.startswith('linux'):
         os.system('clear')
     elif os.sys.platform.startswith('win32'):
         os.system('cls')
+    TestFunctions.TestFunctions.compare_by_imbd_rating(args['<arg1>'], args['<arg2>'])
+if args['compare_rating']:
+    if os.sys.platform.startswith('linux'):
+        os.system('clear')
+    elif os.sys.platform.startswith('win32'):
+        os.system('cls')
+    TestFunctions.TestFunctions.compare_by_box_office(args['<arg1>'], args['<arg2>'])
 
-    if args['<compare_category>']:
-        category = args['<sort_category>']
-        TestFunctions.TestFunctions.sorting(category)
+if args['compare_awards']:
+    if os.sys.platform.startswith('linux'):
+        os.system('clear')
+    elif os.sys.platform.startswith('win32'):
+        os.system('cls')
+    TestFunctions.TestFunctions.compare_by_number_of_awards(args['<arg1>'], args['<arg2>'])
+if args['compare_runtime']:
+    TestFunctions.TestFunctions.compare_by_runtime(args['<arg1>'], args['<arg2>'])

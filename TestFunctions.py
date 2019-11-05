@@ -27,7 +27,7 @@ class TestFunctions(TestCase):
                 print(titles[1], vars[1])
 
     def compare_by_box_office(Title2, Title1):
-        column = BoxOffice
+        column = 'BoxOffice'
         vars = []
         titles = []
         c.execute(
