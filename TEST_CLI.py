@@ -9,8 +9,7 @@ Usage:
   TEST_CLI.py compare_rating [<arg1>] [<arg2>]
   TEST_CLI.py compare_awards [<arg1>] [<arg2>]
   TEST_CLI.py compare_runtime [<arg1>] [<arg2>]
-  'compare_rating'
-  
+
   
 '''
 
