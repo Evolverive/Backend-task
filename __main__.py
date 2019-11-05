@@ -178,7 +178,7 @@ def movies_in_certain_language(lang):
         conn.commit()
         print(c.fetchall())
 def compare_by_imbd_rating(Title2,Title1):
-    column=imdbRating
+    column='imdbRating''
     with conn:
         c.execute("SELECT Title, " + column + " FROM movies_generated  WHERE Title='" + Title2 + "' OR Title='" + Title1 + "'")
         # c.execute()
@@ -192,7 +192,7 @@ def compare_by_imbd_rating(Title2,Title1):
         else:
             print(titles[1], vars[1])
 def compare_by_box_office(Title2,Title1):
-    column=BoxOffice
+    column='BoxOffice''
     vars = []
     titles = []
     c.execute("SELECT Title, " + column + " FROM movies_generated  WHERE Title='" + Title2 + "' OR Title='" + Title1 + "'")

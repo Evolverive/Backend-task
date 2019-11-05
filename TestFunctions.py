@@ -11,7 +11,7 @@ def change_space_to_plus(title):
     return title.replace(' ', '+')
 class TestFunctions(TestCase):
     def compare_by_imbd_rating(Title2, Title1):
-        column = imdbRating
+        column = 'imdbRating'
         with conn:
             c.execute(
                 "SELECT Title, " + column + " FROM movies_generated  WHERE Title='" + Title2 + "' OR Title='" + Title1 + "'")

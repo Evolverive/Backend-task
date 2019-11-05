@@ -23,6 +23,16 @@ It can filter table and print it by Director, Actors, Language (write one word a
     Check which movies earned over 100 000 000$ , command "80wins"
     
 -"--add"
+    Add new movie to datasource
 
 -"--highscores"
--
+    Show the biggest values in Runtime, Box office earnings, Most awards won,Most nominations, Most Oscars, Highest IMDB Rating
+
+
+Comparing value in specific category between two titles and showing greather, commands:
+compare_imdb [<arg1>] [<arg2>]
+compare_rating [<arg1>] [<arg2>]
+compare_awards [<arg1>] [<arg2>]
+compare_runtime [<arg1>] [<arg2>]
+Example: python TEST_CLI.py compare_imdb "The Shawshank Redemption" "In Bruges"
+
