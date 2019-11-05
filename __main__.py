@@ -280,20 +280,20 @@ if __name__ == "__main__":
     save_to_csv(whole_data)
     #remove_zero_column()
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--sort_by', type=str,
-                        help='type name of column by which you want to sort your table')
-    parser.add_argument('--filter_by', type=str,
-                        help='type name of column by which you want to sort your table')
-    #parser.add_argument('--y', type=float, default=1.0,
-                   #     help='What is the second number?')
-    #parser.add_argument('--operation', type=str, default='add',
-                    #    help='What operation? Can choose add, sub, mul, or div')
-    parser.add_argument('--filter_by', nargs='+', help='filtering for specific property of database \n after --filter_by add director or actor to filter database by these categories \n to search for movies that was nominated for oscar but did not win any print "movies_nominated_for_oscar_not_win" \n for movies that won over 80% of nominations print "movies_won_80_percent" \n  for searching movies that earned over 100 000 000 $ print "movies_earned_over_100_000_000"\n to search over movies in certain language write (without quotation marks) two arguments : "language" and after that specific language, for example "English"')
-    args = parser.parse_args()
-  # sys.stdout.write(str(sorting(column)))
-    if args.sort_by != None:
-        sorting(args)
+  #   parser = argparse.ArgumentParser()
+  #   parser.add_argument('--sort_by', type=str,
+  #                       help='type name of column by which you want to sort your table')
+  #   parser.add_argument('--filter_by', type=str,
+  #                       help='type name of column by which you want to sort your table')
+  #   #parser.add_argument('--y', type=float, default=1.0,
+  #                  #     help='What is the second number?')
+  #   #parser.add_argument('--operation', type=str, default='add',
+  #                   #    help='What operation? Can choose add, sub, mul, or div')
+  #   parser.add_argument('--filter_by', nargs='+', help='filtering for specific property of database \n after --filter_by add director or actor to filter database by these categories \n to search for movies that was nominated for oscar but did not win any print "movies_nominated_for_oscar_not_win" \n for movies that won over 80% of nominations print "movies_won_80_percent" \n  for searching movies that earned over 100 000 000 $ print "movies_earned_over_100_000_000"\n to search over movies in certain language write (without quotation marks) two arguments : "language" and after that specific language, for example "English"')
+  #   args = parser.parse_args()
+  # # sys.stdout.write(str(sorting(column)))
+  #   if args.sort_by != None:
+  #       sorting(args)
     # elif args[0].filter_by != None:
     #     if (args[0].filter_by=='language'):
     #         lang=args[1].filter_by
