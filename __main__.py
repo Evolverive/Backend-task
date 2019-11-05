@@ -51,7 +51,12 @@ def add_movie_to_datasource(title):
     clear_data = data_from_api.filter(['Title', 'Year', 'Runtime', 'Genre', 'Director', 'Actors', 'Writer', 'Language', 'Country', 'Awards','imdbRating', 'imdbVotes', 'BoxOffice'], axis=1)
     clear_data = clear_data.iloc[0]
     print(clear_data)
-#def highscores():
+def highscores():
+    with conn:
+        c.execute("SELECT MAX(RUNTIME), Title FROM movies_generated  WHERE Runtime=MAX(Runtime)")
+
+    conn.commit()
+
 
 
 

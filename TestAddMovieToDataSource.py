@@ -40,7 +40,7 @@ data_from_api = pd.DataFrame(data=data)
 clear_data = data_from_api.filter(['Title', 'Year', 'Runtime', 'Genre', 'Director', 'Actors', 'Writer', 'Language', 'Country', 'Awards','imdbRating', 'imdbVotes', 'BoxOffice'], axis=1)
 clear_data = clear_data.iloc[0]
 print(type(clear_data))
-df.dropna(how='all')
+clear_data.dropna(how='all')
 print(clear_data)
 clear_data.to_sql(con=conn, name='movies_generated', if_exists='append')
 print(c.fetchall())
