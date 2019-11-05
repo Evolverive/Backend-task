@@ -3,41 +3,16 @@ from unittest import TestCase
 import sqlite3
 
 class TestSorting(TestCase):
-    def test_sorting(self):
-        # conn = sqlite3.connect('/home/milo/Desktop/Backend/movies.sqlite')
-        # cur = conn.cursor()
-        # cur.executescript(''' DROP TABLE [IF EXISTS] sort_test;
-        #                 CREATE TABLE sort_test (Col1 , Col2 , Col3 );
-        #              insert into sort_test(Col1, Col2, Col3) values ('Wladyslaw','Polska','Zuraw');
-        #              insert into sort_test(Col1, Col2, Col3) values ('Agnieszka','Angola','Antylopa');
-        #              insert into sort_test(Col1, Col2, Col3) values ('Marcin','Urugwaj','Pies' );
-        #              ''')
-        import mov
-        con = sqlite3.connect(":memory:")
-        cur = con.cursor()
-        cur.executescript("""
-            create table person(
-                firstname,
-                lastname,
-                age
-            );
+    def sorting(category):
+        conn = sqlite3.connect('/home/milo/Desktop/Backend/movies.sqlite')
+        c = conn.cursor()
+        table_n = 'movies_generated'
+        with conn:
+            # cur.execute('SELECT * FROM tab = :tab ORDER BY cat = :cat ASC', {'tab':table_n, 'cat':category})
 
-            create table book(
-                title,
-                author,
-                published
-            );
+            c.execute("SELECT * FROM '"+table_n+"' ORDER BY "+category+" ASC")
+            print(category)
 
-            insert into book(title, author, published)
-            values (
-                'Dirk Gently''s Holistic Detective Agency',
-                'Douglas Adams',
-                1987
-            );
-            """)
-        con.commit()
-        assert mov.sorting(Col1, sort_test)
-        print(cur.fetchall())
-        cur.close()
-
-        self.fail()
+        for row in c:
+            print(row)
+        conn.commit()
