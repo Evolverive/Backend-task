@@ -1,9 +1,10 @@
 # Backend-task
 Destination of this repositorium is making operations on database, which is taking it's information from Omdb API.
+
 1.First of all. The task which is performed in __"_main_"__is making database file by taking Titles from "movies.csv" file and then downloading every needed columns from API to new csv file ("movies_done.csv"). After downloading, dataframe with needed informations is tranformed to SQLite file, which is helping to perform operation on data.
 
 2.Then there's making CLI in TEST_CLI.py which is using every programmed function to get done required tasks
-Essential file with a class with functions used by CLI is TestFunctions.py
+
 
 For User:
 Use in terminal in this directory file TEST_CLI.py, which is perfomorming functions defined in TestFunctions.py
@@ -13,8 +14,7 @@ for example you can write: python TEST_CLI.py filtr_by Director "Olivier Nakache
 
 (CLI has helping commands what user should write)
 
-In Repositorium is a lot of .py files with tests of each function
-
+In Repositorium is a lot of .py files with tests of each function, but essential file with a class with functions used by CLI is TestFunctions.py
 Command which you can use in Command Line Interface are:
 -"sort_by":
 It can sort by chosen category
@@ -33,9 +33,9 @@ It can filter table and print it by Director, Actors, Language (write one word a
 
 
 Comparing value in specific category between two titles and showing greather, commands:
-compare_imdb [<arg1>] [<arg2>]
-compare_rating [<arg1>] [<arg2>]
-compare_awards [<arg1>] [<arg2>]
-compare_runtime [<arg1>] [<arg2>]
+compare_imdb "arg1" "arg2"
+compare_rating "arg1" "arg2"
+compare_awards "arg1" "arg2"
+compare_runtime "arg1" "arg2"
 Example: python TEST_CLI.py compare_imdb "The Shawshank Redemption" "In Bruges"
 
