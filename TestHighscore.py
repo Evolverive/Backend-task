@@ -117,7 +117,6 @@ with conn:
     vars = []
     earned = 0
     c.execute("SELECT imdbRating, Title FROM movies_generated ")
-    print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
     for row in c:
         #print(row)
         Title = list(row)[1]

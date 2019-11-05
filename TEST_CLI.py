@@ -9,6 +9,7 @@ Usage:
 
 from docopt import docopt
 import os
+import re
 import TestFunctions
 
 print("Program for sorting and filtering.\nHelp:\nTo sort database use: sort_by <sort_category>")
