@@ -10,6 +10,102 @@ c = conn.cursor()
 def change_space_to_plus(title):
     return title.replace(' ', '+')
 class TestFunctions(TestCase):
+    def compare_by_imbd_rating(Title2, Title1):
+        column = imdbRating
+        with conn:
+            c.execute(
+                "SELECT Title, " + column + " FROM movies_generated  WHERE Title='" + Title2 + "' OR Title='" + Title1 + "'")
+            # c.execute()
+            vars = []
+            titles = []
+            for row in c:
+                titles.append(list(row)[0])
+                vars.append(list(row)[1])
+            if vars[0] > vars[1]:
+                print(titles[0], vars[0])
+            else:
+                print(titles[1], vars[1])
+
+    def compare_by_box_office(Title2, Title1):
+        column = BoxOffice
+        vars = []
+        titles = []
+        c.execute(
+            "SELECT Title, " + column + " FROM movies_generated  WHERE Title='" + Title2 + "' OR Title='" + Title1 + "'")
+        vars = []
+        titles = []
+        earned = 0
+        for row in c:
+            Title = list(row)[0]
+            Money = list(row)[1]
+            print(Money)
+            if (Money != 'N/A' and Money != None):
+                earned = re.findall(r'(\d+.?\d\d+.?\d *\d+.?\d *) *', Money)
+                if (len(Money) != 0):
+                    earned = int(earned[0].replace(',', ''))
+            else:
+                earned = 0
+            print(Money)
+            titles.append(list(row)[0])
+            vars.append(earned)
+        if vars[0] > vars[1]:
+            print(titles[0], vars[0])
+        else:
+            print(titles[1], vars[1])
+
+    #####
+    def compare_by_number_of_awards(Title1, Title2):
+        titles = []
+        vars = []
+        column = 'Awards'
+        with conn:
+            titles = []
+            vars = []
+            c.execute(
+                "SELECT Title, " + column + " FROM movies_generated  WHERE Title='" + Title2 + "' OR Title='" + Title1 + "'")
+            for row in c:
+                print(row)
+                Title = list(row)[0]
+                award = list(row)[1]
+                # print(award)
+                win1 = re.findall(r'(\d+.?\d*) wins', award)
+                win2 = re.findall(r'Won (\d+.?\d*)', award)
+                if len(win1) == 0:
+                    win1.append(0)
+                if len(win2) == 0:
+                    win2.append(0)
+                all_win = int(win1[0]) + int(win2[0])
+                titles.append(Title)
+                vars.append(all_win)
+            # print(vars)
+        if vars[0] > vars[1]:
+            print("Won " + str(titles[0]) + " with " + str(vars[0]) + " awards")
+        else:
+            print("Won " + str(titles[1]) + " with " + str(vars[1]) + " awards")
+
+    # class comparing
+    def compare_by_runtime(Title1, Title2):
+        column = 'Runtime'
+        with conn:
+            titles = []
+            vars = []
+            c.execute(
+                "SELECT Title, " + column + " FROM movies_generated  WHERE Title='" + Title2 + "' OR Title='" + Title1 + "'")
+            for row in c:
+
+                Title = list(row)[0]
+                award = list(row)[1]
+                win1 = re.findall(r'(\d+.?\d*) min', award)
+                if len(win1) == 0:
+                    win1.append(0)
+                titles.append(Title)
+                vars.append(int(win1[0]))
+        # print(vars)
+        if int(vars[0]) > int(vars[1]):
+            print(str(titles[0]) + " is longer and has " + str(vars[0]) + " min")
+        else:
+            print(str(titles[1]) + " is longer and has " + str(vars[1]) + " min")
+
     def sorting(category):
 
         table_n = 'movies_generated'

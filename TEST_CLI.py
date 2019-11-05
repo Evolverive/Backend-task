@@ -5,6 +5,7 @@ Usage:
   TEST_CLI.py filtr_by [<filter_category>] [<object>]
   TEST_CLI.py --add [<name>]
   TEST_CLI.py --highscores
+  TEST_CLI.py --compare [<arg1>] [<arg2>]
 '''
 
 from docopt import docopt
@@ -58,3 +59,15 @@ if args['--highscores']:
     if os.sys.platform.startswith('linux') : os.system('clear')
     elif os.sys.platform.startswith('win32') : os.system('cls')
     TestFunctions.TestFunctions.highscores()
+if args['compare']:
+    if os.sys.platform.startswith('linux') : os.system('clear')
+    elif os.sys.platform.startswith('win32') : os.system('cls')
+    TestFunctions.TestFunctions.highscores(
+    if os.sys.platform.startswith('linux'):
+        os.system('clear')
+    elif os.sys.platform.startswith('win32'):
+        os.system('cls')
+
+    if args['<compare_category>']:
+        category = args['<sort_category>']
+        TestFunctions.TestFunctions.sorting(category)
