@@ -7,20 +7,18 @@ Destination of this repositorium is making operations on database, which is taki
 
 
 For User:
-Use in terminal in this directory file TEST_CLI.py, which is perfomorming functions defined in TestFunctions.py
-If you write "python TEST_CLI.py" , then you get help
-for example you can write: python TEST_CLI.py filtr_by Director "Olivier Nakache, Éric Toledano"
-
+Use in terminal in this directory file TEST_CLI.py, which is perfomorming functions defined in TestFunctions.py .
+If you write "python TEST_CLI.py", then you get help information,
+for example if you write: python TEST_CLI.py filtr_by Director "Olivier Nakache, Éric Toledano"
 
 (CLI has helping commands what user should write)
-
-In Repositorium is a lot of .py files with tests of each function, but essential file with a class with functions used by CLI is TestFunctions.py
-Command which you can use in Command Line Interface are:
+This repo contains a lot of .py files with tests of each function, but essential file with a class functions used by CLI is TestFunctions.py
+Commands that you can use in Command Line Interface:
 -"sort_by":
-It can sort by chosen category
+Sorting by chosen category
 
 -"filtr_by":
-It can filter table and print it by Director, Actors, Language (write one word at the end of the command
+Filtering table and printing it by Director, Actors, Language (write one word at the end of the command
     It can also check which movies was nominated for oscar but didn't win any, the command is : "NotWin". 
     Check which movies won at least 80% of nominations, command "80wins".
     Check which movies earned over 100 000 000$ , command "80wins"
