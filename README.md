@@ -1,7 +1,7 @@
 # Backend-task
 Destination of this repositorium is making operations on database, which is taking it's information from Omdb API.
 
-1.First of all. The task which is performed in __"_main_"__is making database file by taking Titles from "movies.csv" file and then downloading every needed columns from API to new csv file ("movies_done.csv"). After downloading, dataframe with needed informations is tranformed to SQLite file, which is helping to perform operation on data.
+1.First of all. The task performed in __"_main_"__is making database file by taking Titles from "movies.csv" file and then downloading every needed columns from API to new csv file ("movies_done.csv"). After downloading, dataframe with needed informations is tranformed to SQLite file, which is helping to perform operation on data.
 
 2.Then there's making CLI in TEST_CLI.py which is using every programmed function to get done required tasks
 
