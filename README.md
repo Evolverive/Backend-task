@@ -23,7 +23,7 @@ Filtering table and printing it by Director, Actors, Language (write one word at
     Check which movies earned over 100 000 000$ , command "80wins"
     
 -"--add"
-    Add new movie to datasource
+    Add new movie to database
 
 -"--highscores"
     Show the biggest values in Runtime, Box office earnings, Most awards won,Most nominations, Most Oscars, Highest IMDB Rating
