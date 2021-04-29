@@ -12,7 +12,7 @@ If you write "python TEST_CLI.py", then you get help information,
 for example if you write: python TEST_CLI.py filtr_by Director "Olivier Nakache, Éric Toledano"
 
 (CLI has helping commands what user should write)
-This repo contains a lot of .py files with tests of each function, but essential file with a class functions used by CLI is TestFunctions.py
+This repo contains a lot of python files with tests of each function, but essential file with a class functions used by CLI is TestFunctions.py
 Commands that you can use in Command Line Interface:
 -"sort_by":
 Sorting by chosen category
